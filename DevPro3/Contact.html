@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+   <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Sai's</span> Website</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Resume.html">Resume</a></li>
+            <li><a href="Biography.html">Biography</a></li>
+            <li class="current"></li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+  <link rel="stylesheet" href="./css/style.css">
+<div class="container">
+  <form action="https://formspree.io/saithemeister@email.com"
+      method="POST">
+    
+
+    
+    <label for="Reason">Reason</label>
+    <select id="Reason" name="Reason">
+      <option value="Job Offer">Job Offer</option>
+      <option value="Mentoring">Mentoring</option>
+      <option value="Others">Others</option>
+      <option value="Internship">Internship</option>
+    </select>
+    <script type="text/javascript">
+  $(document).ready(function(){
+$.getJSON('Reason.json', function(data) {
+    for( var index in data.Reason ) {
+        $('#countryBut ul').append('<li><a href="#" data-maker="'+data.Reason[index].name
+   +'>'+data.Reason[index].name+'</a></li>');
+    }
+  });
+});
+</script>
+   
+
+    <label for="Description">Description</label>
+    <textarea id="Description" name="Description" placeholder="Please describe your reason here....." style="height:200px"></textarea>
+    <p>Please enter your name below<br />
+    <input type="text" name="name">
+    <p>Please enter your email below<br />
+    <input type="email" name="_replyto">
+    <input type="submit" value="Send">
+
+  </form>
+   <div class="dropdown btn-group" id="ReasonBut">
+    <button type="button"  class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Your Reason <span class="caret"></span>
+    </button>
+    <ul class="but-dropdown dropdown-menu">
+
+    </ul>
+</div><!--end of btn-group-->
+</div>
+</head>
+
+<body>
+  <script src="/Website/Validation.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
